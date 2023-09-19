@@ -1,0 +1,204 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+}
+
+.off .calculator {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 32px;
+    color: #fff;
+}
+
+.content {
+    position: relative;
+    display: inline-block;
+}
+
+.iphone {
+    height: 70vh;
+}
+
+.iphone img {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.battery-icon {
+    position: absolute;
+    right: 6%;
+    filter: brightness(100);
+    width: 30px;
+    top: 3%;
+}
+
+.battery-icon img {
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+}
+
+.calculator {
+    position: absolute;
+    display: flex;
+    left: 44%;
+    transform: translateX(-50%);
+    bottom: 6%;
+    width: 58%;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 22px;
+    opacity: 1;
+}
+
+.input {
+    margin-top: 2rem;
+    grid-column: span 4;
+    margin-bottom: 20px;
+    align-self: center;
+    width: 100%;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+    text-align: right;
+    outline: none;
+    margin-top: 16px;
+}
+
+.error-popup {
+    grid-column: span 4;
+    display: none;
+    padding: 10px;
+    background-color: #f84949;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    animation: slide-down 0.3s ease-in-out;
+    position: absolute;
+    bottom: 20%;
+    width: 80%;
+}
+
+.error-popup.active {
+    display: block;
+}
+
+.result {
+    font-size: 48px;
+    text-align: end;
+    color: #fff;
+    margin-bottom: 2rem;
+    align-self: flex-end;
+}
+
+.buttons {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.btn-oper {
+    background-color: #f69906;
+}
+
+.btn-oper:hover {
+    background-color: #fab443;
+}
+
+button {
+    font-size: 24px;
+    background-color: #4d4d4d;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+button:hover {
+    background-color: #555;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.power-switch {
+    float: right
+}
+
+@media (max-width: 570px) {
+    .title {
+        font-size: 26px;
+        margin-bottom: 32px;
+    }
+    
+    .iphone {
+        height: 60vh;
+    }
+
+    .power-switch {
+        position: absolute;
+        bottom: 15%;
+        left: 43%;
+
+    }
+
+    .calculator {
+        left: 50%;
+        width: 70%;
+        height: 89%;
+    }
+
+    .result {
+        font-size: 36px;
+    }
+
+    button {
+        font-size: 16px;
+        background-color: #4d4d4d;
+        width: 40px;
+        height: 40px;
+        border-radius: 32px;
+    }
+
+    .error-popup {
+        padding: 5px;
+        font-size: 10px;
+        bottom: 22%;
+        width: 80%;
+    }
+}
